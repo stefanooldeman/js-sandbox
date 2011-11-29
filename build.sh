@@ -2,7 +2,7 @@
 
 moved=0
 log=compile_err.log
-dev=dev/
+dev=scripts/
 
 
 rm -rf $log
