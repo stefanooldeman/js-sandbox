@@ -6,7 +6,7 @@ dev=scripts/
 
 
 rm -rf $log
-rm $dev*.js 
+rm $dev*.js 2> /dev/null
 
 echo 'compiling..'
 coffee -c $dev* > $log
