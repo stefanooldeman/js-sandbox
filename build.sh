@@ -9,7 +9,7 @@ rm -rf $log
 rm $dev*.js 2> /dev/null
 
 echo 'compiling..'
-coffee -c $dev* > $log
+coffee --bare --compile $dev* > $log 
 if [[ -s $log ]] ; then
     echo "failed! go see $log"
     exit 1;
