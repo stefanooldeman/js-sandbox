@@ -3,6 +3,7 @@
 moved=0
 log=compile_err.log
 dev=scripts/
+src=src
 
 
 rm -rf $log
@@ -17,7 +18,10 @@ else
     rm -rf $log
 fi 
 
-find $dev. -name '*.js' -exec mv {} src/. \;
+if [ ! -d $src ] ; then
+    mkdir $src
+fi
+find $dev. -name '*.js' -exec mv {} $src/. \;
 
 moved=`ls $dev | wc -l | tr -s " "`
 echo "succesfully complied$moved files"
